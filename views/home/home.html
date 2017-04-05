@@ -2,3 +2,4 @@
 <input type="text" ng-model="barcode">
 <button ng-click="getUser()">Post me</button>
 <p>{{errorMessage}}</p>
+<h3 ng-if="!AllowEntry">Please see a staff member, your membership has expired</h3>
