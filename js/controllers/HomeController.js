@@ -4,16 +4,18 @@ app.controller('HomeController',['$scope','$http',function($scope,$http){
     $scope.name = "Content Goes Here";
     $scope.AllowEntry = true;
     console.log($scope.APIKEY);
+    $scope.errorMessage = "";
     $scope.barcode = "";
     $scope.getUser = function(){
     if ($scope.barcode.length >=1){
       $http.get($scope.APIPath+"?ApiKey="+$scope.APIKEY+"&Barcode="+$scope.barcode).then(function(response){
         if ( response.data.apiVersion == "1.0.0.0"){
+            $scope.errorMessage="";
          $scope.name = response.data.basePath;   
         }
       });  
     }else{
-     $scope.barcode= "Please enter a valid barcode";   
+     $scope.errorMessage= "Please enter a valid barcode";   
     }
         
     };
