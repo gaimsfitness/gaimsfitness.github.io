@@ -14,10 +14,12 @@ app.controller('HomeController',['$scope','$http',function($scope,$http){
         if ( response.data.apiVersion == "1.0.0.0"){
             $scope.errorMessage="";
          $scope.name = response.data.basePath;   
+         $scope.AllowEntry = true;
         }
       });  
     }else{
-     $scope.errorMessage= "Please enter a valid barcode";   
+     $scope.errorMessage= "Please enter a valid barcode";
+     $scope.AllowEntry = false;
     }
         
     };
