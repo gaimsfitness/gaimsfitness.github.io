@@ -7,7 +7,9 @@ app.controller('HomeController',['$scope','$http',function($scope,$http){
     $scope.getUser = function(){
     
       $http.get($scope.APIPath+"?ApiKey="+$scope.APIKEY).then(function(response){
-        console.log(response);
+        if ( response.data.apiVersion == "1.0.0.0"){
+         $scope.name = response.data.basePath;   
+        }
       });  
         
     };
