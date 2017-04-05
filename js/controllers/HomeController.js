@@ -7,8 +7,10 @@ app.controller('HomeController',['$scope','$http',function($scope,$http){
     $scope.errorMessage = "";
     $scope.barcode = "";
     $scope.getUser = function(){
+        var fullAPIPath = $scope.APIPath+"?ApiKey="+$scope.APIKEY+"&Barcode="+$scope.barcode;
     if ($scope.barcode.length >=1){
-      $http.get($scope.APIPath+"?ApiKey="+$scope.APIKEY+"&Barcode="+$scope.barcode).then(function(response){
+        console.log(fullAPIPath);
+      $http.get(fullAPIPath).then(function(response){
         if ( response.data.apiVersion == "1.0.0.0"){
             $scope.errorMessage="";
          $scope.name = response.data.basePath;   
