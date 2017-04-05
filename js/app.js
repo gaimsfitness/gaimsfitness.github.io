@@ -1,4 +1,4 @@
-var app = angular.module('',['ngRoute']); //Place App Name in Single Quotes
+var app = angular.module('ClubReadyCheckIn',['ngRoute']); //Place App Name in Single Quotes
 
 app.config(function($routeProvider){
     $routeProvider
