@@ -18,7 +18,7 @@ app.controller('HomeController',['$scope',function($scope){
     $scope.APIPath = "http://www.clubready.com/api/resource"
     $scope.name = "Content Goes Here";
     $scope.AllowEntry = true;
-    console.log(APIKEY);
+    console.log($scope.APIKEY);
     $scope.getUser = function(){
     
       $http.get($scope.APIPath+"?ApiKey="+$scope.APIKEY).then(function(response){
