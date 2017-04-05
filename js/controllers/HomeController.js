@@ -5,7 +5,7 @@ app.controller('HomeController',['$scope',function($scope){
     $scope.AllowEntry = true;
     $scope.getUser = function(){
     
-      $http.post($scope.APIPath+"?ApiKey="+$scope.APIKEY).then(function(response){
+      $http.get($scope.APIPath+"?ApiKey="+$scope.APIKEY).then(function(response){
         console.log(response);
       });  
         
